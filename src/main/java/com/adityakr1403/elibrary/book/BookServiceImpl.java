@@ -21,7 +21,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Optional<Book> getBookById(Long id) {
-        return Optional.ofNullable(bookRepository.findById(id))
+        return Optional.of(bookRepository.findById(id))
                 .orElseThrow(() ->
                         new BookNotFoundException("Book with id " + id + " not found"));
     }

@@ -2,7 +2,6 @@ package com.adityakr1403.elibrary.book;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +30,7 @@ public class BookController {
 
     @PostMapping("/add")
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
-        return new ResponseEntity<Book>(bookService.addBook(book), CREATED);
+        return new ResponseEntity<>(bookService.addBook(book), CREATED);
     }
 
     @PutMapping("/update")
